@@ -50,20 +50,20 @@ Supported Platforms:
 		uri: string;
 	}>
 
-## Example Usage 1
-
-### HTML code 
+## Example Usage 
   
+  ```
   <input type="button" (click)="inputFile(accept)"/>
+  ```
 
-### JavaScript/Typescript code
-
+  ```
   function inputFile(accept : string){
     (async () => {
       const file = await inputFile.getFile(accept);
       console.log(file ? file.name : 'canceled');
     })();
   }
+  ```
 
 
 ## Platform-Specific Notes
