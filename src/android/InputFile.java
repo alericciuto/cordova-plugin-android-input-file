@@ -170,6 +170,8 @@ public class InputFile extends CordovaPlugin {
 						);
 
 						base64 = Base64.encodeToString(bytes, Base64.DEFAULT);
+				      		while(base64.length() % 4 != 0)
+                					base64 += "=";
 						
 						Context context = this.cordova.getActivity().getApplicationContext();
 						File captureFile = new File(context.getFilesDir(), captureFileName);
