@@ -86,7 +86,7 @@ public class InputFile extends CordovaPlugin {
 			    captureFileName = System.currentTimeMillis() + ".jpg";
 			    File tempFile = new File(context.getFilesDir(), captureFileName);
 			    Log.d(TAG, "Temporary photo capture file: " + tempFile);
-			    tempUri = FileProvider.getUriForFile(context, context.getPackageName() + ".chooser.provider", tempFile);
+			    tempUri = FileProvider.getUriForFile(context, context.getPackageName() + ".inputFile.provider", tempFile);
 			    Log.d(TAG, "Temporary photo capture URI: " + tempUri);
 			    captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
 			} catch (Exception e) {
@@ -105,7 +105,7 @@ public class InputFile extends CordovaPlugin {
 		    chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] { captureIntent });
 		}
 		
-		cordova.startActivityForResult(this, chooser, Chooser.PICK_FILE_REQUEST);
+		cordova.startActivityForResult(this, chooser, InputFile.PICK_FILE_REQUEST);
 
 		PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
 		pluginResult.setKeepCallback(true);
