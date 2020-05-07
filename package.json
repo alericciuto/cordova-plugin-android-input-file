@@ -1,0 +1,32 @@
+{
+	"name": "cordova-plugin-android-input-file",
+	"version": "1.0.0",
+	"description": "Cordova android input file plugin",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alericciuto/cordova-plugin-android-input-file.git"
+	},
+	"keywords": [
+		"file",
+		"chooser",
+		"picker",
+		"file-chooser",
+		"android",
+		"input",
+    "camera"
+	],
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/alericciuto/cordova-plugin-android-input-file/issues"
+	},
+	"cordova": {
+		"id": "cordova-plugin-android-input-file",
+		"platforms": [
+			"android"
+		]
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	}
+}
