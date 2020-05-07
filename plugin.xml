@@ -11,17 +11,17 @@
 
 
 	<js-module src="www/inputFile.js" name="inputFile">
-		<clobbers target="chooser" />
+		<clobbers target="inputFile" />
 	</js-module>
 
 	<platform name="android">
-		<source-file src="src/android/InputFile.java" target-dir="src/org/apache/cordova/inputFile" />
+		<source-file src="src/android/InputFile.java" target-dir="src/org/apache/cordova/inputfile" />
 		<source-file src="src/android/xml/input_file_provider_paths.xml" target-dir="res/xml" />
-		<source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/inputFile" />
+		<source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/inputfile" />
 
 		<config-file target="config.xml" parent="/*">
 			<feature name="InputFile">
-				<param name="android-package" value="org.apache.cordova.inputFile.InputFile" />
+				<param name="android-package" value="org.apache.cordova.inputfile.InputFile" />
 			</feature>
 		</config-file>
 		
@@ -30,8 +30,8 @@
 		</config-file>
 		<config-file target="AndroidManifest.xml" parent="application">
 		  <provider
-		      android:name="org.apache.cordova.inputFile.FileProvider"
-		      android:authorities="${applicationId}.inputFile.provider"
+		      android:name="org.apache.cordova.inputfile.FileProvider"
+		      android:authorities="${applicationId}.inputfile.provider"
 		      android:exported="false"
 		      android:grantUriPermissions="true" >
 		      <meta-data
