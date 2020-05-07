@@ -1,4 +1,4 @@
-package org.apache.cordova.inputFile;
+package org.apache.cordova.inputfile;
 
 import android.app.Activity;
 import android.content.ContentResolver;
