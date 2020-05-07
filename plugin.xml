@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin 
+	xmlns="http://www.phonegap.com/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	id="cordova-plugin-android-input-file" 
+	version="1.0.0"
+>	
+	<name>Chooser</name>
+	<repo>https://github.com/alericciuto/cordova-plugin-android-input-file.git</repo>
+	<issue>https://github.com/alericciuto/cordova-plugin-android-input-file/issues</issue>
+
+
+	<js-module src="www/inputFile.js" name="inputFile">
+		<clobbers target="chooser" />
+	</js-module>
+
+	<platform name="android">
+		<source-file src="src/android/InputFile.java" target-dir="src/org/apache/cordova/inputFile" />
+		<source-file src="src/android/xml/input_file_provider_paths.xml" target-dir="res/xml" />
+		<source-file src="src/android/FileProvider.java" target-dir="src/org/apache/cordova/inputFile" />
+
+		<config-file target="config.xml" parent="/*">
+			<feature name="InputFile">
+				<param name="android-package" value="org.apache.cordova.inputFile.InputFile" />
+			</feature>
+		</config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="application">
+		  <provider
+		      android:name="org.apache.cordova.inputFile.FileProvider"
+		      android:authorities="${applicationId}.inputFile.provider"
+		      android:exported="false"
+		      android:grantUriPermissions="true" >
+		      <meta-data
+			  android:name="android.support.FILE_PROVIDER_PATHS"
+			  android:resource="@xml/input_file_provider_paths"/>
+		  </provider>
+		</config-file>
+		
+		<preference name="ANDROID_SUPPORT_V4_VERSION" default="27.+"/>
+		<framework src="com.android.support:support-v4:$ANDROID_SUPPORT_V4_VERSION"/>
+	</platform>
+  
+</plugin>
